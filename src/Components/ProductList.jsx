@@ -1,7 +1,18 @@
 import React from 'react';
 import './ProductList.css'; 
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart } from './CartSlice';// Action to add product to cart
  
 const ProductList = () => {
+
+    const dispatch = useDispatch();
+    const cartItems = useSelector(state => state.cart.cartItems); // Get cart items globally
+
+
+    function handleAddToCart(product){
+        dispatch(addItemToCart(product));
+    }
+
 
   const products = [
     { id: 1, name: 'Product A', price: 60 },
@@ -18,7 +29,7 @@ const ProductList = () => {
                 <>
                     <li key={product.id} className="product-list-item">
                         <span>{product.name} - ${product.price}</span>
-                        <button>
+                        <button onClick={handleAddToCart(product)} disabled={cartItems.find(item => item.id === product.id)}>
                             Add to cart
                         </button>
                     </li>
