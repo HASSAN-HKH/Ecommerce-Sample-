@@ -29,7 +29,7 @@ const ProductList = () => {
                 <>
                     <li key={product.id} className="product-list-item">
                         <span>{product.name} - ${product.price}</span>
-                        <button onClick={handleAddToCart(product)} disabled={cartItems.find(item => item.id === product.id)}>
+                        <button onClick={() => handleAddToCart(product)} disabled={cartItems.find(item => item.id === product.id)}>
                             Add to cart
                         </button>
                     </li>

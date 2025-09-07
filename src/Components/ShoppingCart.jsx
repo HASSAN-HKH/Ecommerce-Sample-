@@ -19,11 +19,11 @@ const ShoppingCart = () => {
         dispatch(clearCart());
     }
 
-    const handleIncreaseQuantity = () => {
+    const handleIncreaseQuantity = (product) => {
         dispatch(increaseItemQuantity(product))
     }
 
-    const handleDecreaseQuantity  = () => {
+    const handleDecreaseQuantity  = (product) => {
         dispatch(decreaseItemQuantity(product))
     }
    
