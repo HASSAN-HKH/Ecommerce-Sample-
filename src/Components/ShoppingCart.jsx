@@ -47,7 +47,7 @@ const ShoppingCart = () => {
       </ul>
       <button className="clear-cart-btn" onClick={() => handleClearCart()}>Clear Cart</button>
     </div>
-  
+            <div style={{textAlign:"center"}}>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
     </>
   );
 };
